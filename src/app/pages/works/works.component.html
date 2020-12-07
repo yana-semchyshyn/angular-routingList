@@ -1,0 +1,22 @@
+<div>
+    <ul class="nav nav-tabs">
+        <div class="nav">
+            <li class="last_works">Last works >>></li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="[ 'cenzor' ]" routerLinkActive="active_link">Cenzor</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="[ 'userslist' ]" routerLinkActive="active_link">Users</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="[ 'tasklist' ]" routerLinkActive="active_link">Task</a>
+            </li>
+        </div>
+        <div>
+            <a class="back_to" [routerLink]="[ '/home' ]">Back to >>> Home</a>
+        </div>
+    </ul>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>

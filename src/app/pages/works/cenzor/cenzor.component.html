@@ -1,0 +1,21 @@
+<div class="container">
+    <p class="bad_words_line">Bad words: <span [textContent]='badWords'></span></p>
+    <form name="checkWords">
+        <div class="form-group">
+            <input type="text" class='form-control bad_words_input'
+                [ngClass]="{'is-invalid':wordValidation === false}"
+                [placeholder]='wordValidmessage' [(ngModel)]="badWord" name='badWord'>
+            <button type="button" class="btn btn-warning" (click)="getArrBadWords()"
+                (click)="addBadWords()">Add</button>
+            <button type="button" class="btn btn-danger" (click)="resetBadWords()">Reset</button>
+        </div>
+        <div>
+            <input type="text" class="form-control text_section" [placeholder]='textValidMessage' [value]="value"
+                [ngClass]="{'is-invalid': textValidation === false }"
+                [(ngModel)]="textWords" name='textWords'>
+        </div>
+        <div>
+            <button type="button" class="btn btn-success" (click)="cenzorText()">Cenzor</button>
+        </div>
+    </form>
+</div>

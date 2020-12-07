@@ -1,0 +1,32 @@
+<div class="col-sm-11" style="margin: 0 auto;">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Task</th>
+                <th scope="col">Check</th>
+                <th scope="col">DONE/IN PROGRESS</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of getArrTasks; index as i">
+                <td>{{ i+1 }}</td>
+                <td>{{task.nameOfTask}}</td>
+                <td><input type="checkbox" (click)="getArr(i)"></td>
+                <td *ngIf="!task.status" style="color: red;">In PROGRESS</td>
+                <td *ngIf="task.status" style="color: green;">Done</td>
+                <td><button type="button" class="btn btn-warning" (click)="editTask(i)">Edit</button></td>
+                <td><button type="button" class="btn btn-danger" (click)="deleteTask(i, true)" [disabled]="!task.status">Delete</button></td>
+            </tr>
+            <tr *ngIf="isEdited">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" class="form-control" [(ngModel)]="editTaskName" name="editTaskName"></td>
+                <td><button class="btn btn-success saveBtn" (click)="saveTask()">save</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

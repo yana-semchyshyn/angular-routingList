@@ -1,0 +1,13 @@
+<div class="col-sm-11" style="margin: 0 auto; margin-top: 10px;">
+    <div>
+        <h3>Count of task: {{ count }}</h3>
+    </div>
+    <hr>
+    <form>
+        <div class="form-group">
+            <input type="text" class="form-control login" id="exampleFormControlInput1" [(ngModel)]="task" name="task">
+        </div>
+        <button type="button" class="btn btn-success addBtn" (click)="addTask()">Add</button>
+    </form>
+</div>
+<app-taskchild [getTask]="sendTask" [getArrTasks]="sendArrTasks" (check)="getStatus(true)"></app-taskchild>
